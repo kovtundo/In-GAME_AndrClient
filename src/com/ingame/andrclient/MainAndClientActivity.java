@@ -36,7 +36,7 @@ public class MainAndClientActivity extends BaseGameActivity
 	public Scene onLoadScene()
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return new Scene();
 	}
 
 	public void onLoadComplete()
