@@ -46,8 +46,11 @@ public class AcRegister extends Activity
 	 //инициализация
 	 private void InitializationField()
 	 {
+<<<<<<< HEAD
 		 //llMain = (LinearLayout) findViewById(R.layout.ac_login);
 		 
+=======
+>>>>>>> allredy ok register test3
 		 tlLoginForm = (TableLayout) findViewById(R.id.mainTable);
 		 tLogin      = new TextView(act); 
 		 eLogin      = new EditText(act); 

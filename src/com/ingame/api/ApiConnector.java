@@ -22,7 +22,11 @@ public class ApiConnector
 	private static boolean DEBUG = true;
 	private static String session;
 	
+<<<<<<< HEAD
 	 public static void Register(String[] params) throws Exception 
+=======
+	 public static Boolean Register(String[] params) throws Exception 
+>>>>>>> allredy ok register test3
 	 {
 	        String login = params[0];
 	        String password = params[1];
@@ -37,7 +41,40 @@ public class ApiConnector
 	        jSONObject.put("ip", ip);
 	        
 	        String resp = Http.Request(URL, "POST", jSONObject.toString(), "text/xml");
+<<<<<<< HEAD
 
+=======
+	        
+	        JSONObject object = new JSONObject(resp);
+	        if("ok".equals(object.getString("status")))
+	        { // Регистрация прошла успешно
+	        	return true;
+	        }
+	        return false;
+	 }
+ 
+	 public static Boolean Login(String[] params) throws Exception 
+	 {
+	        String login = params[0];
+	        String password = params[1];
+	        String imei = params[2];
+	        JSONObject jSONObject = new JSONObject();
+	        jSONObject.put("oper", "login");
+	        jSONObject.put("imei", imei);
+	        jSONObject.put("appkey", appkey);
+	        jSONObject.put("email", email);
+	        jSONObject.put("login", login);
+	        jSONObject.put("password", password);
+	        jSONObject.put("ip", ip);
+	        
+	        String resp = Http.Request(URL, "POST", jSONObject.toString(), "text/xml");
+	        JSONObject object = new JSONObject(resp);
+	        if("ok".equals(object.getString("status")))
+	        { // вход успешно
+	        	return true;
+	        }
+	        return false;
+>>>>>>> allredy ok register test3
 	 }
 	
 

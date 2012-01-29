@@ -1,20 +1,20 @@
 package com.ingame.controller;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+
 import com.ingame.api.ApiConnector;
 import com.ingame.dialog.DialogFactory;
 import com.ingame.ui.R;
 import com.ingame.util.TelephoneUtil;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
 
 /**
  * 
  * @author zemlyanoi
  *
  */
-public class TaskRegister extends AsyncTask
+public class TaskLogin extends AsyncTask
 {
 	private Activity act;
     private String oper;
@@ -25,12 +25,9 @@ public class TaskRegister extends AsyncTask
     private boolean rez = false;
     private int errMessID;
     private String errMessStr = "";
-<<<<<<< HEAD
-=======
-    private Boolean result;
->>>>>>> allredy ok register test3
+    private Boolean result_operation;
     
-    public TaskRegister(Activity act, String oper, String[] param) 
+    public TaskLogin(Activity act, String oper, String[] param) 
     {
         this.act = act;
         this.oper = oper;
@@ -55,11 +52,7 @@ public class TaskRegister extends AsyncTask
 		{
             try 
             {
-<<<<<<< HEAD
-            	new ApiConnector().Register(param);
-=======
-            	result = new ApiConnector().Register(param);
->>>>>>> allredy ok register test3
+            	result_operation = new ApiConnector().Login(param);
             }
             catch (Exception ex) 
             {
@@ -72,14 +65,13 @@ public class TaskRegister extends AsyncTask
 	}
 	
 	@Override
-<<<<<<< HEAD
-    protected void onPostExecute(Object result) {
-=======
     protected void onPostExecute(Object result) 
 	{
->>>>>>> allredy ok register test3
         super.onPostExecute(result);
+        if(result_operation)
+        {
+        	//ВПУСКАЕМ В ИГРУ
+        }
         dialog.dismiss();
     }  
-
 }
